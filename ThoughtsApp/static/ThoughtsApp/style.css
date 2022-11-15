@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: white url("images/bg.png") no-repeat;
+    background-size: cover;
+    font-family: "Times New Roman", Times, serif;
+}
+
+h3 {
+    margin: 0.25em;
+    font-size: 1.35em;
+    text-align: center;
+}
+
+.login_logout {
+    display: flex;
+    margin: 0.75em;
+    height: 2.25em;
+}
+
+h1 {
+  text-align: center;
+  margin: 50px;
+  font-size: 48px;
+  font-family: 'Open Sans';
+}
+
+li {
+    font-size: 38px;
+    margin: 10px;
+}
+
+a {
+    text-decoration:none;
+    color: black;
+}
+
+.borders {
+    margin: 100px 300px;
+    padding: 5px 15px;
+    border: solid 3px black;
+    border-radius: 10px;
+}
+
+form {
+    margin: 100px 300px;
+    padding: 5px 15px;
+    border: solid 3px black;
+    border-radius: 10px;
+}
+
+.btn {
+    background-color: #4CAF50;
+    border: solid 1px black;
+    border-radius: 5px;
+    padding: 5px 20px;
+    margin: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+input {
+    background-color: #4CAF50;
+    border: solid 1px black;
+    border-radius: 5px;
+    padding: 2px 5px;
+}
+
+

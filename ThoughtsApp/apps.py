@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class ThoughtsappConfig(AppConfig):
+class ThoughtsAppConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'ThoughtsApp'

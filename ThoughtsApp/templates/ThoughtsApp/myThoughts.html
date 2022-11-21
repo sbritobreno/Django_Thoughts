@@ -1,17 +1,15 @@
 {% load static %}
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{% static 'ThoughtsApp/style.css' %}">
-<title>Thoughts</title>
+<title>My Thoughts</title>
 
 {% block content %}
 {% if user.is_authenticated %}
   <div class="login_logout">
       <h3><strong>Hi {{ user.username }}!</strong></h3>
+      <button class="btn"><a href="{% url 'ThoughtsApp:index' %}">Home</a></button>
       <button class="btn" ><a href="{% url 'logout' %}">Log Out</a></button>
-      <button class="btn" ><a href="{% url 'ThoughtsApp:mythoughts' %}">My Thoughts</a></button>
+      <button class="btn" ><a href="{% url 'ThoughtsApp:mythoughts' %}">Add Thought</a></button>
   </div>
 {% else %}
   <div class="login_logout">
@@ -21,7 +19,7 @@
 {% endif %}
 {% endblock %}
 
-<h1>Thoughts</h1>
+<h1>My Thoughts</h1>
 <div class="borders">
-    <p>No thoughts are available.</p>
+    <p>You have no thoughts.</p>
 </div>

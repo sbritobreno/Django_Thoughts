@@ -7,26 +7,26 @@
 
 {% if user.is_authenticated %}
 
-  <div class="login_logout">
-      <h3><strong>Hi {{ user.username }}!</strong></h3>
-      <button class="btn"><a href="{% url 'ThoughtsApp:index' %}">Home</a></button>
-      <button class="btn" ><a href="{% url 'logout' %}">Log Out</a></button>
-      <button class="btn" ><a href="{% url 'ThoughtsApp:mythoughts' %}">My Thoughts</a></button>
-  </div>
-    <h1>Add Thought</h1>
-    <form action="{% url 'ThoughtsApp:addnew' %}" method="post">
-        {% csrf_token %}
-        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif%}
-        <label for="your_thought">Your thought: </label><br>
-        <input id="your_thought" type="text" name="your_thought" value=""><br>
-        <input type="submit" value="Add">
-    </form>
+<div class="login_logout">
+    <h3><strong>Hi {{ user.username }}!</strong></h3>
+    <button class="btn"><a href="{% url 'ThoughtsApp:index' %}">Home</a></button>
+    <button class="btn"><a href="{% url 'logout' %}">Log Out</a></button>
+    <button class="btn"><a href="{% url 'ThoughtsApp:mythoughts' %}">My Thoughts</a></button>
+</div>
+<h1>Add Thought</h1>
+<form action="{% url 'ThoughtsApp:addnew' %}" method="post">
+    {% csrf_token %}
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif%}
+    <label for="your_thought">Your thought: </label><br>
+    <input id="your_thought" type="text" name="your_thought" value=""><br>
+    <input type="submit" value="Add">
+</form>
 {% else %}
 
-  <div class="login_logout">
-      <h3><strong>You are not logged in</strong></h3>
-      <button class="btn"><a href="{% url 'login' %}">Log In</a></button>
-  </div>
+<div class="login_logout">
+    <h3><strong>You are not logged in</strong></h3>
+    <button class="btn"><a href="{% url 'login' %}">Log In</a></button>
+</div>
 {% endif %}
 
 {% endblock %}

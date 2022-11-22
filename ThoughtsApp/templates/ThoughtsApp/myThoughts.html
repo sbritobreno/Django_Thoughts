@@ -6,37 +6,37 @@
 {% block content %}
 {% if user.is_authenticated %}
 
-  <div class="login_logout">
-      <h3><strong>Hi {{ user.username }}!</strong></h3>
-      <button class="btn"><a href="{% url 'ThoughtsApp:index' %}">Home</a></button>
-      <button class="btn" ><a href="{% url 'logout' %}">Log Out</a></button>
-      <button class="btn" ><a href="{% url 'ThoughtsApp:addthought' %}">Add Thought</a></button>
-  </div>
+<div class="login_logout">
+    <h3><strong>Hi {{ user.username }}!</strong></h3>
+    <button class="btn"><a href="{% url 'ThoughtsApp:index' %}">Home</a></button>
+    <button class="btn"><a href="{% url 'logout' %}">Log Out</a></button>
+    <button class="btn"><a href="{% url 'ThoughtsApp:addthought' %}">Add Thought</a></button>
+</div>
 
-    <h1>My Thoughts</h1>
+<h1>My Thoughts</h1>
 
-    <div class="borders">
-        {% for thought in thoughts_list %}
-        {% if thought.user_id == user.id %}
-        <ul>
-            <div class="list">
-                <li>
-                    <p>"{{ thought.thought_text }}"</p>
-                    <p>- {{ thought.user.username }}</p>
-                    <button class="btn" ><a href="{% url 'ThoughtsApp:editthought' thought.id %}">Edit</a></button>
-                    <button class="btn" ><a href="{% url 'ThoughtsApp:remove' thought.id %}">Remove</a></button>
-                </li>
-            </div>
-        </ul>
-        {% endif %}
-        {% endfor %}
-    </div>
+<div class="borders">
+    {% for thought in thoughts_list %}
+    {% if thought.user_id == user.id %}
+    <ul>
+        <div class="list">
+            <li>
+                <p>"{{ thought.thought_text }}"</p>
+                <p>- {{ thought.user.username }}</p>
+                <button class="btn"><a href="{% url 'ThoughtsApp:editthought' thought.id %}">Edit</a></button>
+                <button class="btn"><a href="{% url 'ThoughtsApp:remove' thought.id %}">Remove</a></button>
+            </li>
+        </div>
+    </ul>
+    {% endif %}
+    {% endfor %}
+</div>
 
 {% else %}
-  <div class="login_logout">
-      <h3><strong>You are not logged in</strong></h3>
-      <button class="btn"><a href="{% url 'login' %}">Log In</a></button>
-  </div>
+<div class="login_logout">
+    <h3><strong>You are not logged in</strong></h3>
+    <button class="btn"><a href="{% url 'login' %}">Log In</a></button>
+</div>
 {% endif %}
 
 {% endblock %}

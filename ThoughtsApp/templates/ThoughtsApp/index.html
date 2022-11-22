@@ -23,5 +23,18 @@
 
 <h1>Thoughts</h1>
 <div class="borders">
-    <p>No thoughts are available.</p>
+    {% if thoughts_list %}
+        <ul>
+            {% for thought in thoughts_list %}
+            <div class="list">
+                <li>
+                    <p>"{{ thought.thought_text }}"</p>
+                    <p>- {{ thought.user.username }}</p>
+                </li>
+            </div>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No thoughts are available.</p>
+    {% endif %}
 </div>

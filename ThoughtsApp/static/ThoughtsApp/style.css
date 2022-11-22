@@ -65,7 +65,23 @@ input {
     background-color: #4CAF50;
     border: solid 1px black;
     border-radius: 5px;
-    padding: 2px 5px;
+    padding: 5px 5px;
+    margin: 5px;
 }
 
+#your_thought {
+    width: 80%;
+    font-size: 32px;
+}
+
+.list {
+    margin: 5px;
+    padding: 0px 30px;
+    border: solid 3px black;
+    border-radius: 10px;
+}
+
+ul {
+    list-style-type: none;
+}
 

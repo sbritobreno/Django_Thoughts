@@ -21,10 +21,10 @@ from django.urls import path, include
 from django.views.generic import TemplateView
 
 urlpatterns = [
-    path('thoughts/', include('ThoughtsApp.urls'), name='home'),
+    path('', include('ThoughtsApp.urls'), name='home'),
+    path('', TemplateView.as_view(template_name='ThoughtsApp/index.html'), name='home'),
     path('admin/', admin.site.urls),
     path("accounts/", include("accounts.urls")),
     path("accounts/", include("django.contrib.auth.urls")),
-    path('thoughts/', TemplateView.as_view(template_name='ThoughtsApp/index.html'), name='home'),
     path('accounts/login/', TemplateView.as_view(template_name='login.html'), name='login')
 ]

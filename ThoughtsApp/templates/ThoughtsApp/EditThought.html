@@ -13,14 +13,17 @@
       <button class="btn" ><a href="{% url 'logout' %}">Log Out</a></button>
       <button class="btn" ><a href="{% url 'ThoughtsApp:mythoughts' %}">My Thoughts</a></button>
   </div>
+
     <h1>Edit Thought</h1>
+
     <form action="{% url 'ThoughtsApp:edit' thoughts.id %}" method="post">
         {% csrf_token %}
         {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif%}
-        <label for="your_thought">Your thought: </label><br>
-        <input id="your_thought" type="text" name="your_thought" value="{{thoughts.thought_text}}"><br>
+        <label for="edit_thought">Thought to be edited: </label><br>
+        <input id="edit_thought" type="text" name="edit_thought" value="{{thoughts.thought_text}}"><br>
         <input type="submit" value="Edit">
     </form>
+
 {% else %}
 
   <div class="login_logout">

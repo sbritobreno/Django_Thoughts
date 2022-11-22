@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.views import generic
@@ -48,9 +48,18 @@ def add(request):
     return HttpResponseRedirect(reverse('ThoughtsApp:mythoughts'))
 
 
-def edit(response, thought_id):
+def edit(request, thought_id):
+    phrase = request.POST['edit_thought']
+    pub_date = timezone.now()
+
+    thought = Thoughts.objects.get(pk=thought_id)
+    thought.thought_text = phrase
+    thought.save()
+
     return HttpResponseRedirect(reverse('ThoughtsApp:mythoughts'))
 
 
-def remove(response, thought_id):
+def remove(request, thought_id):
+    thought = Thoughts.objects.get(pk=thought_id)
+    thought.delete()
     return HttpResponseRedirect(reverse('ThoughtsApp:mythoughts'))

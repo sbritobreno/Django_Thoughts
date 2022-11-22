@@ -74,6 +74,11 @@ input {
     font-size: 32px;
 }
 
+#edit_thought {
+    width: 80%;
+    font-size: 32px;
+}
+
 .list {
     margin: 5px;
     padding: 0px 30px;

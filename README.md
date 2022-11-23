@@ -14,7 +14,7 @@ and use the main functionalities in the database (CRUD: Create, Read, Update, an
 1.Clone the repository from GitHub: \
 `git clone https://github.com/sbritobreno/DjangoFirstProject.git`, somewhere
 in your computer.\
-2. Change a few settings on the database (`djangoproject/settings.py line 79`), adding your own settings and also creating a database
+2. Change a few settings on the database (`djangoproject/settings.py line 76`), adding your own settings and also creating a database
 in MySQL with workbench or command line (query = `CREATE DATABASE thoughts`), make sure to name it thoughts or change the name in the settings as well,
 also, before running the program, you have to run the command `py manage.py createsuperuser 
 in order` to create a user to use the program as an Admin and also run the command

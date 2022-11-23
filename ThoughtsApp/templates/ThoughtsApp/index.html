@@ -7,6 +7,8 @@
 <title>Thoughts</title>
 
 {% block content %}
+
+<!--Checks if the user is logged in or not and what to display-->
 {% if user.is_authenticated %}
 <div class="login_logout">
     <h3><strong>Hi {{ user.username }}!</strong></h3>
@@ -23,6 +25,7 @@
 
 <h1>Thoughts</h1>
 <div class="borders">
+<!--Get list of thoughts and display it one by one: Text and Author-->
     {% if thoughts_list %}
     <ul>
         {% for thought in thoughts_list %}

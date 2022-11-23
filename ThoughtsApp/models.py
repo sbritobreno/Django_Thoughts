@@ -3,6 +3,7 @@ from django.contrib import admin
 from django.db import models
 
 
+# Database model for Thoughts using foreign key(User)
 class Thoughts(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     thought_text = models.CharField(max_length=3000)

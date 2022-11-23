@@ -5,6 +5,7 @@
 
 {% block content %}
 
+<!--Checks if the user is logged in or not and what to display-->
 {% if user.is_authenticated %}
 
 <div class="login_logout">
@@ -16,6 +17,7 @@
 <h1>Add Thought</h1>
 <form action="{% url 'ThoughtsApp:addnew' %}" method="post">
     {% csrf_token %}
+<!--Display an error if any while adding thought-->
     {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif%}
     <label for="your_thought">Your thought: </label><br>
     <input id="your_thought" type="text" name="your_thought" value=""><br>

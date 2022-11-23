@@ -72,6 +72,7 @@ WSGI_APPLICATION = 'Thoughts.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# Database localhost configuration
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',

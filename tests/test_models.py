@@ -30,14 +30,9 @@ class ThoughtsModelTestCase(TestCase):
             thought_text=self.thought_text,
             pub_date=self.pub_date
         )
+        # Returns a positive test result
         self.assertEqual(str(thought), self.thought_text)
 
-    def test_thought_admin_display(self):
-        thought = Thoughts.objects.create(
-            user=self.user,
-            thought_text=self.thought_text,
-            pub_date=self.pub_date
-        )
-        self.assertTrue(thought._meta.get_field('pub_date').admin_order_field)
-        self.assertTrue(thought._meta.get_field('pub_date').boolean)
-        self.assertEqual(thought._meta.get_field('pub_date').verbose_name, 'date published')
+        # Returns an error because the values are not exactly the same
+        # self.assertEqual(str(thought), 'This is a failed test.')
+

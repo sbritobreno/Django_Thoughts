@@ -21,3 +21,11 @@ in order` to create a user to use the program as an Admin and also run the comma
 `py manage.py makemigrations` and `py manage.py migrate` to load the changes from the database settings, after that you can run the command 
 `py manage.py runserver` to finally run the program, then you can go to your browser
 and access the `localhost:8000/` URL.
+
+# CA3_Thoughts_24059
+## Continuous Assessment 2 - Back End - Django Test and Security
+
+On this assignment I have been testing a few parts of the application I built while doing the last assessment(CA2). First of all I have not made any change on the application itself but I did deleted all the test.py files on the application as one of the requirements was to create an external folder with all the test files in it, so I created a folder called 'tests' on the project directory, and inside it I create a test file for models (test_models.py), where I implement 2 tests one for creating a new 'thought', including a function setUp that creates an user, which will be the user that creates the 'thought', and another test that returns the 'thought' as an string that would be then loaded to the view, and on this test I forced and error, which is display on the command line when running the tests. I have also created another 2 tests for Views on the file test_views.py, one of the test return all the thoughts that is display on the home page, and the other one returns only the 'thoughts' that was created by the current user, I have implement all test using TestCase from django.test, and apart from those two test files I have also created a test_settings.py file where I set again all the application settings but now with a few small changes such as on the INSTALLED_APPS where I add the test, and  I have also modified the database settings in order to create another database so I would not inject any fake data to the app's database. As another requirement I have also create a small script with a configuration to run all the test in a different enviroment.
+
+### Command to run the config script and tests:
+python run_tests.py
